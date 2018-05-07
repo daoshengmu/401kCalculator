@@ -1,6 +1,6 @@
 
 function saveWithout401k(deposit, years) {
-  const tax = 0.28 + 0.093; // federal + state rate married
+  const tax = 0.28 + 0.093; // 2017 federal + state rate married
   const rate = 1.04; // compound interest rate
 
   let total = 0.0;
@@ -10,10 +10,6 @@ function saveWithout401k(deposit, years) {
   }
 
   return total;
-}
-
-function employerContribution(salary, percent) {
-
 }
 
 function depositBy401k(deposit, years) {
@@ -47,12 +43,11 @@ function calculate(){
   let t = bySelf + byEmployer;
   let selfResult = 0.0;
   let n = 0;
-  const withdrawPerYear = 18650; // 10% federal rate for married
-  const tax = 0.1;    // 10% federal rate for married.
-  const rate = 1.04; // compound interest rate
+  const withdrawPerYear = 18650; // 2017 Tax Year Individual Income Tax Rate 10% federal rate for married
+  const tax = 0.1;    // 2017 10% federal rate for married.
+  const rate = 1.04;  // compound interest rate
 
-  // After penalty, tax.
-  // Withdraw in n years.
+  // Self deposit after penalty, tax and withdraw in n years.
   while (t > 0) {
     selfResult += withdrawPerYear * (1 - penalty) * (1 - tax);
     t -= withdrawPerYear;
@@ -64,8 +59,7 @@ function calculate(){
   let n1 = 0;
   let employerResult = 0.0;
 
-  // After penalty, tax.
-  // Withdraw in n years.
+  // Employer contribution after penalty, tax and withdraw in n1 years.
   while (t1 > 0) {
     employerResult += withdrawPerYear * (1 - penalty) * (1 - tax);
     t1 -= withdrawPerYear;
