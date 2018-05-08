@@ -71,11 +71,11 @@ function calculate(){
   let without401k = saveWithout401k(deposit, years);
   without401k += employerResult;
 
-  output.value = "Self Deposit: " + bySelf.toFixed(2).toString() + "\n" +
+  output.value = "Self Deposit (USD$): " + bySelf.toFixed(2).toString() + "\n" +
                  "Employer Deposit: " + byEmployer.toFixed(2).toString() + "\n" +
-                 "Withdraw 401k after leaving US: " + n.toString() + " yrs, having " + with401k.toFixed(2).toString() + "\n" +
-                 "Without 401k after leaving US: " + n1.toString() + " yrs, having " +  without401k.toFixed(2).toString() + "\n" +
-                 "401K Earn: " + (with401k - without401k).toFixed(2).toString();
+                 "Withdraw 401k (USD$) after leaving US: " + n.toString() + " yrs, having " + with401k.toFixed(2).toString() + "\n" +
+                 "Without 401k (USD$) after leaving US: " + n1.toString() + " yrs, having " +  without401k.toFixed(2).toString() + "\n" +
+                 "401K Earns (USD$): " + (with401k - without401k).toFixed(2).toString();
 }
 
 window.onload = function() {
